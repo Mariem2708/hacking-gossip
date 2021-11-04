@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
-  def bonjour_name
-    @user_name = params[:user_entry]  
-    puts params[:user_entry] 
+  def show
+    @user_name = params[:id]  
+    puts params[:id] 
   end
 end

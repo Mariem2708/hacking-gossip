@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+margin: 20px;
+color:black;
+}
+
+h3 {
+  color black;
+}
+
+p {
+margin : 20px;
+}
+
+h2 {
+margin : 20px;
+}
+
+body{
+    background-color:#F5F5F5 ;
+  }
+
+h6{
+  color:#d7dcdd;
+}
+
+nav { 
+  background: #6c8ead;
+  color : white;
+}
+
+.navbar-nav .nav-link{
+  color : white;
+}
+
+.form-group
+{
+  margin :20px;
+}
+
+.btn.btn-light
+{
+  color:#fd5c63;
+  margin: 10px;
+  display: block;
+}
+
+.card{
+  margin:20px;
+}
+
+.dropdown{
+  background-color: #F5F5F5;
+}

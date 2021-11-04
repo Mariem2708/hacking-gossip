@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+City.destroy_all
+User.destroy_all
+Gossip.destroy_all
+Tag.destroy_all
+JoinTableGossipTag.destroy_all
+
 10.times do 
     City.create(
         name:Faker::Address.city,
@@ -20,10 +26,11 @@ end
         description:Faker::Lorem.paragraph,
         email:Faker::Internet.email, 
         age:Faker::Number.between(from: 20, to: 65),
-        city: City.all.sample) 
+        city: City.all.sample,
+        password:Faker::Internet.password(min_length:5, max_length: 10, mix_case: true, special_characters: true))
 end
 
-20.times do 
+10.times do
     Gossip.create(
         user: User.all.sample,
         title:Faker::Book.title, 
@@ -35,14 +42,14 @@ end
       title:Faker::Lorem.characters(number: 1))
 end
 
-5.times do
+10.times do
     JoinTableGossipTag.create(
         gossip: Gossip.all.sample, 
         tag: Tag.all.sample)
 end
 
 
-4.times do 
+10.times do 
     user_random = User.all.sample
     user_random2 = User.all.sample
     
@@ -56,3 +63,15 @@ end
         recipient: user_random2,
         content:Faker::Lorem.paragraph)
 end
+
+
+    #Gossip.all.each do |gossip|
+        #4.times do 
+            #Comment.create(
+                #content:Faker::Lorem.paragraph,
+                #user_id: User.all.sample.id,
+                #gossip_id: gossip.id)
+        #end
+    #end
+    
+
